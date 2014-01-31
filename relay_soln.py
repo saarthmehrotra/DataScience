@@ -41,18 +41,27 @@ def main():
     pmf = thinkstats2.MakePmfFromList(speeds, 'actual speeds')
 
     # plot the biased distribution seen by the observer
-    biased = BiasPmf(pmf, 10, name='observed speeds')
+    biased = BiasPmf(pmf, 5, name='observed at 5MPH')
+    biased1 = BiasPmf(pmf, 7.5, name='observed at 7.5MPH')
+    biased2 = BiasPmf(pmf, 10, name='observed at 10MPH')
 
-    thinkplot.Hist(biased)
-    thinkplot.Save(root='observed_speeds',
-                   title='PMF of running speed',
-                   xlabel='speed (mph)',
-                   ylabel='probability')
+    # thinkplot.Hist(biased)
+    # thinkplot.Save(root='observed_speeds',
+    #                title='PMF of running speed',
+    #                xlabel='speed (mph)',
+    #                ylabel='probability')
 
     cdf = thinkstats2.MakeCdfFromPmf(biased)
+    cdf1 = thinkstats2.MakeCdfFromPmf(biased1)
+    cdf2 = thinkstats2.MakeCdfFromPmf(biased2)
 
     thinkplot.Clf()
+    thinkplot.Cdf(pmf.MakeCdf())
     thinkplot.Cdf(cdf)
+    thinkplot.Cdf(cdf1)
+    thinkplot.Cdf(cdf2)
+
+
     thinkplot.Save(root='observed_speeds_cdf',
                    title='CDF of running speed',
                    xlabel='speed (mph)',
