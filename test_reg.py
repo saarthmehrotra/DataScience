@@ -71,7 +71,8 @@ def SatIqData(n, rho):
 def main():
     random.seed(17)
 
-    rho = 0.8
+    rho = .8
+    
     xs, ys = SatIqData(1000, rho)
     print 'mean, var of x', thinkstats2.MeanVar(xs)
     print 'mean, var of y', thinkstats2.MeanVar(ys)
