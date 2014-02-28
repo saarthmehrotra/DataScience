@@ -51,7 +51,7 @@ def PValue(xs, ys, n=10):
 def main(name, data_dir='.'):
     xs, ys = ReadData(data_dir)
 
-    thinkplot.Scatter(xs, ys, alpha=0.2)
+    thinkplot.Scatter(xs, ys, alpha=0.35)
     thinkplot.Show(xlabel='Age (years)',
                    ylabel='Birth weight (oz)')
 
